@@ -15,7 +15,7 @@ const { auth} = require('./middleware/auth');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+app.use(express.static('client/build'))
 
 app.get('/api/getBook',(req,res)=>{
     let id = req.query.id;
@@ -151,6 +151,14 @@ app.delete('/api/delete_book',(req,res)=>{
 const cors=require('cors') ;
 app.use(cors());
 
+
+if(process.env.NODE_ENV=='production')
+{
+    const path=require('path')
+    app.get('/*',(req,res)=>{
+        res.sendfile(path.resolve(__dirname,'../client','build','index.html'))
+    })
+}
 const port =process.env.PORT || 3001;
 app.listen(port,()=>{
     console.log("SERVER IS RUNNING PRATIK") ;
