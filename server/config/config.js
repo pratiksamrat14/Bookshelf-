@@ -5,7 +5,7 @@ const config = {
     },
     default:{
         SECRET: 'SUPERSECRETPASSWORD123',
-        DATABASE: 'mongodb+srv://pratiksamrat14:pratik@cluster0.v7yxure.mongodb.net/?retryWrites=true&w=majority'
+        DATABASE: 'mongodb+srv://pratiksamrat14:123@bookshelf.bddzkgr.mongodb.net/?retryWrites=true&w=majority'
     }
 }
 
